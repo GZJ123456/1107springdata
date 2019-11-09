@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+    <script type="application/javascript" th:href="@{/webjars/jquery/3.3.1/jquery.js}"></script>
+    <script>
+       /* alert("====");*/
+    </script>
+<body>
+
+
+
+<center>
+    <p th:text="${msg}" th:if="${not #strings.isEmpty(msg)}"></p>
+    <form th:action="@{/login}" method="post">
+        id<input type="text" name="eid"><br>
+        姓名:<input type="text" name="ename"><br>
+        <input type="submit" value="登录">
+    </form>
+</center>
+
+</body>
+</html>

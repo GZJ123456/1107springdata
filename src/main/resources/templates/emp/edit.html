@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="zh"  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>修改</title>
+</head>
+<body>
+
+    <form th:action="@{update}" method="post">
+        <input type="hidden" name="eid" th:value="${emp.eid}">
+        姓名:<input type="text" name="ename" th:value="${emp.ename}"><br>
+        入职日期:<input type="date" name="dd" th:value="${#dates.format(emp.hirdate,'yyyy-MM-dd')}"><br>
+        工资:<input type="text" name="salary" th:value="${emp.salary}"><br>
+        部门:
+         <select name="dept.deptno">
+            <option th:value="${emp.dept.deptno}" th:text="${emp.dept.dname}"></option>
+            <option th:each="dept : ${depts}" th:text="${dept.dname}" th:value="${dept.deptno}"></option>
+         </select>
+        <br>
+        <input type="submit" value="提交">
+    </form>
+</body>
+</html>
